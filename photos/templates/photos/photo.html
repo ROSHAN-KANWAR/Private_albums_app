@@ -1,0 +1,16 @@
+{% extends 'photos/base.html'%}
+{%load static%}
+{%block title%} Photo View {%endblock title%}
+	{%block main%}
+<div class="container ">
+              <div class="row justify-content-center">
+        <div class="col">
+            <a href="{% url 'gallery' %}" class="btn btn-outline-dark my-3 btn-md">Go Back</a>
+        <div style="height:80vh;">
+             <h4>Category : {{photo.category}}</h4>
+        <img src="{{photo.image.url}}" class="img-fluid img-fluid img-thumbnail" style="max-width:100%;max-heigth:100%;" alt="loading image">
+           <p class="mx-2 mt-2">{{photo.dec}}</p>
+        </div>
+        </div>
+              </div></div>
+{%endblock main%}

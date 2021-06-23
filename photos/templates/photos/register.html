@@ -1,0 +1,49 @@
+{% extends 'photos/base.html' %}
+{%load static%}
+{%block title%} Login Page{%endblock title%}
+	{%block main%}
+<div class="container">
+	<div class="row ">
+		<div class="col-md-2"></div>
+		<div class="col-md-6 mt-3 mx-2">
+			{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+			<h4>Create an Account</h4>
+<form method="post" enctype="multipart/form-data">
+{%csrf_token%}
+			{% for fm in form%}
+	  <div class="form-group row mt-1">
+			{{fm.label_tag}}{{fm}}
+          </div>
+
+			{%endfor%}
+
+<h6 class="mt-2">Already have an Account ? <a href="{%url 'login' %}">Login</a> </h6>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+    <div class="row">
+    <div class="col">
+<div class="card-footer bg-light mt-3 mx-2">
+    © 2021 TechnosDeveloper. All Rights Reserved.  <span> <b><a href="https://www.linkedin.com/in/roshan-kanwar-b80150170?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BD4K5vmw1SnCpfUu9Ux8NrQ%3D%3D" target="_blank"><i class="fab fa-linkedin text-primary mx-3"></i></a>
+    <a href="https://github.com/ROSHAN17052?tab=repositories" target="_blank"> <i class="fab fa-github mx-3 "></i></a>
+    <i class="fab fa-facebook text-primary mx-3"></i></b></span>
+</div>
+    </div>
+</div>
+</div>
+{%endblock%}
