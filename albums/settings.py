@@ -14,7 +14,7 @@ SECRET_KEY = os.environ['sec']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["youralbums1.herokuapp.com","localhost"]
+ALLOWED_HOSTS = ["youralbums1.herokuapp.com","localhost","roshankanwar.xyz","www.roshankanwar.xyz"]
 
 
 # Application definition
