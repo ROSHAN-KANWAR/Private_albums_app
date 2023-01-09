@@ -2,10 +2,12 @@
 {%load static%}
 {%block title%} Login Page{%endblock title%}
 	{%block main%}
-<div class="container">
-	<div class="row ">
-		<div class="col-md-2"></div>
-		<div class="col-md-6 mt-3 mx-2">
+<div class="container-fluid  mx-auto">
+    <div class="row bg-light px-5 py-4">
+ <h2>Private Albums Registrations Forms</h2>
+    </div>
+	<div class="row px-4 py-3 border border-3 border-primary">
+		<div class="col-md-4 mx-auto  mt-3 mx-2 shadow-lg px-4 py-3">
 			{% if form.errors %}
     {% for field in form %}
         {% for error in field.errors %}
@@ -21,22 +23,22 @@
     {% endfor %}
 {% endif %}
 			<h4>Create an Account</h4>
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" class=" ">
 {%csrf_token%}
 			{% for fm in form%}
-	  <div class="form-group row mt-1">
+	  <div class="form-group row mt-3 mb-2">
 			{{fm.label_tag}}{{fm}}
           </div>
 
 			{%endfor%}
 
-<h6 class="mt-2">Already have an Account ? <a href="{%url 'login' %}">Login</a> </h6>
-  <button type="submit" class="btn btn-primary">Register</button>
+<h6 class="mt-4">Already have an Account ? <a href="{%url 'login' %}">Login</a> </h6>
+  <button type="submit" class=" mb-4 btn btn-primary d-block mx-auto mt-3">Register</button>
 </form>
 		</div>
-		<div class="col-md-2"></div>
+		
 	</div>
-    <div class="row">
+    <div class="row text-center">
     <div class="col">
 <div class="card-footer bg-light mt-3 mx-2">
     © 2021 TechnosDeveloper. All Rights Reserved.  <span> <b><a href="https://www.linkedin.com/in/roshan-kanwar-b80150170?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BD4K5vmw1SnCpfUu9Ux8NrQ%3D%3D" target="_blank"><i class="fab fa-linkedin text-primary mx-3"></i></a>

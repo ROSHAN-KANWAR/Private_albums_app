@@ -2,8 +2,11 @@
 {%load static%}
 {%block title%} Login Page{%endblock title%}
 	{%block main%}
-<div class="container">
-    <div class="row">
+<div class="container-fluid  mx-auto">
+    <div class="row bg-light px-5 py-4">
+        <h2>Private Albums Login Forms</h2>
+           </div>
+    <div class="row  px-4 py-3 border border-3 border-primary">
            {% if messages %}
         {% for mes in messages %}
 
@@ -12,8 +15,8 @@
         </p>
                    {%endfor%}
         {% endif%}
-        <div class="col-md-2"></div>
-        <div class="col-md-8 p-3">
+      
+        <div class="col-md-4 mx-auto  mt-3 mx-2 shadow-lg px-4 py-3">
 
             {% if page == "login" %}
             <form method="post" enctype="multipart/form-data">
@@ -24,20 +27,20 @@
             <h5>Login to view photo and add share with your friends</h5>
              {% csrf_token%}
       {% for fm in form %}
-                 <div class="form-group row mt-1 mb-2">
+                 <div class="form-group row mt-4 mb-2">
             {{fm.label_tag}}{{fm}}
                  </div>
       {% endfor%}
-<h6>Did't have an Account ? <a href="{%url 'register' %}">Register</a> </h6>
-  <button type="submit" class="btn btn-primary">Login</button>
+<h6 class="mt-4 mb-2">Did't have an Account ? <a href="{%url 'register' %}">Register</a> </h6>
+  <button type="submit" class="btn btn-primary mt-4 mb-2 d-block mx-auto">Login</button>
 </form>
             {%endif%}
         </div>
-        <div class="col-md-2"></div>
+       
     </div>
     <div class="row">
     <div class="col">
-<div class="card-footer bg-light mt-5 mx-2">
+<div class="card-footer bg-light mx-2">
     © 2021 TechnosDeveloper. All Rights Reserved.  <span> <b><a href="https://www.linkedin.com/in/roshan-kanwar-b80150170?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BD4K5vmw1SnCpfUu9Ux8NrQ%3D%3D" target="_blank"><i class="fab fa-linkedin text-primary mx-3"></i></a>
     <a href="https://github.com/ROSHAN17052?tab=repositories" target="_blank"> <i class="fab fa-github mx-3 "></i></a>
     <i class="fab fa-facebook text-primary mx-3"></i></b></span>

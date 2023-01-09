@@ -24,19 +24,20 @@
 </style>
 <body>
 {% if request.user.is_authenticated %}
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a href="{% url 'gallery' %}" class="navbar-brand">Albums_app</a>
+<nav class="sticky-top container-fluid bg-dark text-white">
+ <div class="row py-4 px-4 ">
+  <div class="col-md-8 mx-auto d-flex justify-content-between">
+    <a href="{% url 'gallery' %}" class="navbar-brand d-block text-decoration-none  fw-bold text-white">Albums_app</a>
     <div class="d-flex">
-        <a href="{% url 'logout' %}" class="btn btn-outline-danger mx-2">Logout</a>
-  {%endif%}
+        <a href="{% url 'logout' %}" class="btn btn-danger text-white mx-2">Logout</a>
     </div>
   </div>
+ </div>
 </nav>
+{%endif%}
 	{%block main%}
 	{%endblock main%}
-
-    </div>
+ </div>
 
 
 <script src="{%static 'js/bootstrap.min.js' %}"></script>

@@ -2,8 +2,8 @@
 {%load static%}
 {%block title%} Gallery View {%endblock title%}
 	{%block main%}
-	<div class="container mt-4">
-        <div class="row">
+	<div class="container-fluid  mx-auto">
+        <div class="row mx-auto">
                      {% if messages %}
         {% for mes in messages %}
 
@@ -14,9 +14,9 @@
         {% endif%}
             <br>
             {% if request.user.is_authenticated %}
-          <p><b> Welcome,{{request.user}}</b></p>
+          <p class=" fw-bold px-4 py-4"><b> Welcome,{{request.user}}</b></p>
             {%endif%}
-            <div class="col-md-3">
+            <div class="col-md-3  mx-auto">
              <div class="card">
   <div class="card-header">
    Categories
@@ -33,12 +33,12 @@
 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-8  mx-auto">
               <div class="row my-2">
   {% for photo in photo %}
                   <div class="col-md-4 my-1">
-                              <div class="card">
-              <img src="{{photo.image.url}}" class="card-img-top" alt="...">
+               <div class="card">
+              <img src="{{photo.image.url}}" class="card-img-top h-50 w-100" alt="...">
             <div class="card-title mt-2 mx-1">
                <p>Categories : {{photo.category}}</p>
               </div>
